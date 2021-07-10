@@ -1,3 +1,2 @@
 # Atlas-Voyage
-
-This game was created by AndrewRimington
+A game that is a combination of the Chrome T-Rex game and Asteroids.
