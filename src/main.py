@@ -44,16 +44,13 @@ def main():
     #To get sprites onto window surface
     def draw():
         window.blit(surface,(0,0))
-
-        # surface.blit(bg,(0,0))
-
         font = pygame.font.Font("assets\Aliens Among Us.ttf",25)
         #Need to fix score adding system
         text_surface = font.render(f"Score: {score}{score}{score}{score}",1,(255,255,255))
         window.blit(text_surface,(10,10))
         player.draw_ship(window)
         pygame.display.update()
-
+    
     y = 0
 
     while running:
@@ -70,7 +67,6 @@ def main():
             draw()
             surface.blit(bg,(0,rel_y))
             y += 1
-            # pygame.draw.line()
             pygame.display.update()
 
         
