@@ -27,17 +27,17 @@ class spaceship:
 
     
     def update(self,x,vel):
-        # keys = py.key.get_pressed()
-        # if keys[py.K_a] and x > vel + 5:
-        #     x -= vel
-        # # vel + 5 = 5.4, this is so that the border spacing on the right side is the same as the leaft side
-        # if keys[py.K_d] and x < 720-self.width-5.4:
-        #     x += vel
-        # #elif so that by holding eg. d and left arrow keys together, player won't double in speed
-        # elif keys[py.K_LEFT] and x > vel + 5:
-        #     x -= vel
-        # elif keys[py.K_RIGHT] and x < 720-self.width-5.4:
-        #     x += vel
+        keys = py.key.get_pressed()
+        if keys[py.K_a] and x > vel + 5:
+            x -= vel
+        # vel + 5 = 5.4, this is so that the border spacing on the right side is the same as the left side
+        if keys[py.K_d] and x < 720-self.width-5.4:
+            x += vel
+        #elif so that by holding eg. d and left arrow keys together, player won't double in speed
+        elif keys[py.K_LEFT] and x > vel + 5:
+            x -= vel
+        elif keys[py.K_RIGHT] and x < 720-self.width-5.4:
+            x += vel
     
     def draw(self, screen):
         screen.blit(self.player)
