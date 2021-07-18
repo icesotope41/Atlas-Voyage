@@ -1,4 +1,4 @@
-import pygame, os, random, time
+import pygame, os
 
 pygame.init()
 
@@ -18,6 +18,7 @@ laser = pygame.image.load(os.path.join("assets","laser_beam.png"))
 ##Background
 bg = pygame.transform.scale(pygame.image.load(os.path.join("assets","Background.png")),(width,height))
 
+
 class spaceship:
     def __init__(self,x,y,health=1):
         self.ship_sprite = atlas
@@ -27,6 +28,7 @@ class spaceship:
         self.laser_cooldown = 0
         self.mask = pygame.mask.from_surface(self.ship_sprite)
         self.max_health = health
+
 
     def draw_ship(self,window):
         window.blit(self.ship_sprite,(self.x,self.y))
@@ -41,6 +43,7 @@ def main():
     surface = pygame.Surface((750,600))
     score = 00000
 
+
     #To get sprites onto window surface
     def draw():
         window.blit(surface,(0,0))
@@ -50,9 +53,9 @@ def main():
         window.blit(text_surface,(10,10))
         player.draw_ship(window)
         pygame.display.update()
+   
     
     y = 0
-
     while running:
         clock.tick(FPS)
         draw()
@@ -68,7 +71,6 @@ def main():
             surface.blit(bg,(0,rel_y))
             y += 1
             pygame.display.update()
-
         
         keys = pygame.key.get_pressed()
         if keys[pygame.K_a] and player.x - vel > -220:
@@ -81,4 +83,6 @@ def main():
             player.x -= vel
         elif keys[pygame.K_RIGHT] and player.x + vel < 415:
             player.x += vel
+
+
 main()
