@@ -5,7 +5,7 @@ pygame.init()
 width,height = 750,600 
 window = pygame.display.set_mode((width,height))
 pygame.display.set_caption("Atlas's Voyage")
-
+score = 0
 
 #Sprites
 ##Debris
@@ -41,24 +41,31 @@ def main():
     vel = 5
     player = spaceship(90,365)
     surface = pygame.Surface((750,600))
-    score = 00000
+    # score = 0
 
 
     #To get sprites onto window surface
     def draw():
+        global score
         window.blit(surface,(0,0))
         font = pygame.font.Font("assets\Aliens Among Us.ttf",25)
         #Need to fix score adding system
-        text_surface = font.render(f"Score: {score}{score}{score}{score}",1,(255,255,255))
+        text_surface = font.render(f"Score: {score}",1,(255,255,255))
         window.blit(text_surface,(10,10))
         player.draw_ship(window)
         pygame.display.update()
+
+
+    def score_keeping():
+            global score
+            score += 1
+
    
-    
     y = 0
     while running:
         clock.tick(FPS)
         draw()
+        score_keeping()
         #To check event in the game
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
