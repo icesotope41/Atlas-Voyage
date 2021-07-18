@@ -61,7 +61,6 @@ def main():
             score += 1
 
    
-    
     y = 0
     while running:
         clock.tick(FPS)
